@@ -31,16 +31,24 @@ class PasteAndReindent(sublime_plugin.TextCommand):
 class MoveDownAndReindent(sublime_plugin.TextCommand):
 
     def run(self, edit):
-        self.view.run_command('expand_selection', {'to': 'line'})
-        self.view.run_command('move', {'by': 'characters', 'extend': True, 'forward': False})
-        self.view.run_command('swap_line_down')
-        self.view.run_command('reindent')
+        syntax = self.view.scope_name(self.view.sel()[0].a).split()[0]
+        if syntax in settings.get('exclude_language_from_move'):
+            self.view.run_command('swap_line_down')
+        else:
+            self.view.run_command('expand_selection', {'to': 'line'})
+            self.view.run_command('move', {'by': 'characters', 'extend': True, 'forward': False})
+            self.view.run_command('swap_line_down')
+            self.view.run_command('reindent')
 
 
 class MoveUpAndReindent(sublime_plugin.TextCommand):
 
     def run(self, edit):
-        self.view.run_command('expand_selection', {'to': 'line'})
-        self.view.run_command('move', {'by': 'characters', 'extend': True, 'forward': False})
-        self.view.run_command('swap_line_up')
-        self.view.run_command('reindent')
+        syntax = self.view.scope_name(self.view.sel()[0].a).split()[0]
+        if syntax in settings.get('exclude_language_from_move'):
+            self.view.run_command('swap_line_up')
+        else:
+            self.view.run_command('expand_selection', {'to': 'line'})
+            self.view.run_command('move', {'by': 'characters', 'extend': True, 'forward': False})
+            self.view.run_command('swap_line_up')
+            self.view.run_command('reindent')

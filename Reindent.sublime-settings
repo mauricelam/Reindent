@@ -1,3 +1,6 @@
 {
-    "use_paste_and_indent": false
+    "use_paste_and_indent": false,
+    "exclude_language_from_move": [
+        "source.python"
+    ]
 }
