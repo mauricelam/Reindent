@@ -1,0 +1,14 @@
+[
+    {
+        "caption": "Paste and Reindent",
+        "command": "paste_and_reindent"
+    },
+    {
+        "caption": "Move up and Reindent",
+        "command": "mvoe_up_and_reindent"
+    },
+    {
+        "caption": "Move down and Reindent",
+        "command": "mvoe_down_and_reindent"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "command": "paste_and_reindent",
+        "keys": [
+            "super+shift+v"
+        ]
+    },
+    {
+        "command": "move_down_and_reindent",
+        "keys": [
+            "super+ctrl+down"
+        ]
+    },
+    {
+        "command": "move_up_and_reindent",
+        "keys": [
+            "super+ctrl+up"
+        ]
+    }
+]
